@@ -1,0 +1,20 @@
+[package]
+name = "into-iterator-prototype"
+version = "1.0.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoshuawuyts/into-iterator-prototype"
+documentation = "https://docs.rs/into-iterator-prototype"
+description = "Experiment with methods on IntoIterator"
+readme = "README.md"
+edition = "2018"
+keywords = []
+categories = []
+authors = [
+    "Yoshua Wuyts <rust@yosh.is>"
+]
+
+[features]
+
+[dependencies]
+
+[dev-dependencies]
