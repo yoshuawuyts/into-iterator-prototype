@@ -1,4 +1,5 @@
 //! Helper types for the `map` operation
+
 use super::{IntoIterator, Iterator};
 
 /// An iterator which maps items from one type to another

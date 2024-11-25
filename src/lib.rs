@@ -1,17 +1,19 @@
 //! Experiment with methods on IntoIterator
 //!
 //! This project asks the question: what if we used `IntoIterator` everywhere
-//! instead of `Iterator`?
+//! instead of `Iterator`? This becomes relevant for generator blocks, which
+//! themselves may contain `!Send` items, but that doesn't mean that the type
+//! returned by `gen {}` needs to be `!Send` too.
 //!
-//! # Examples
-//!
-//! ```
-//! // tbi
-//! ```
+//! This crate follows Swift's example, making it so all operations happen on a
+//! base builder type - which has one final operation that converts it into an
+//! actual iterable.
 
 #![forbid(unsafe_code, rust_2018_idioms)]
 #![deny(missing_debug_implementations, nonstandard_style)]
 #![warn(missing_docs, future_incompatible, unreachable_pub)]
+
+pub mod map;
 
 /// A trait for dealing with iterators.
 pub trait Iterator {
@@ -47,5 +49,3 @@ pub trait IntoIterator {
         map::IntoMap::new(self, f)
     }
 }
-
-pub mod map;
