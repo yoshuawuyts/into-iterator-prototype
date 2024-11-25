@@ -17,7 +17,7 @@
 //! ## Example of `Iterator`'s limitations
 //!
 //! Here's a practical case people are bound to hit when writing generator
-//! blocks, which can't be fixed unless generator return `IntoIterator`:
+//! blocks, which can't be fixed unless generator returns `IntoIterator`:
 //!
 //! ```rust
 //! // A gen block that holds some `!Send` type across a yield point
