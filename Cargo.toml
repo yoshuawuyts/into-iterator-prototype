@@ -1,9 +1,9 @@
 [package]
-name = "into-iterator-prototype"
+name = "iterate-trait"
 version = "1.0.0"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/yoshuawuyts/into-iterator-prototype"
-documentation = "https://docs.rs/into-iterator-prototype"
+repository = "https://github.com/yoshuawuyts/iterate-trait"
+documentation = "https://docs.rs/iterate-trait"
 description = "Experiment with methods on IntoIterator"
 readme = "README.md"
 edition = "2018"

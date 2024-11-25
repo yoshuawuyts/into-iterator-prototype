@@ -1,4 +1,4 @@
-<h1 align="center">into-iterator-prototype</h1>
+<h1 align="center">iterate-trait</h1>
 <div align="center">
   <strong>
     Experiment with methods on IntoIterator
@@ -9,17 +9,17 @@
 
 <div align="center">
   <!-- Crates version -->
-  <a href="https://crates.io/crates/into-iterator-prototype">
-    <img src="https://img.shields.io/crates/v/into-iterator-prototype.svg?style=flat-square"
+  <a href="https://crates.io/crates/iterate-trait">
+    <img src="https://img.shields.io/crates/v/iterate-trait.svg?style=flat-square"
     alt="Crates.io version" />
   </a>
   <!-- Downloads -->
-  <a href="https://crates.io/crates/into-iterator-prototype">
-    <img src="https://img.shields.io/crates/d/into-iterator-prototype.svg?style=flat-square"
+  <a href="https://crates.io/crates/iterate-trait">
+    <img src="https://img.shields.io/crates/d/iterate-trait.svg?style=flat-square"
       alt="Download" />
   </a>
   <!-- docs.rs docs -->
-  <a href="https://docs.rs/into-iterator-prototype">
+  <a href="https://docs.rs/iterate-trait">
     <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"
       alt="docs.rs docs" />
   </a>
@@ -27,15 +27,15 @@
 
 <div align="center">
   <h3>
-    <a href="https://docs.rs/into-iterator-prototype">
+    <a href="https://docs.rs/iterate-trait">
       API Docs
     </a>
     <span> | </span>
-    <a href="https://github.com/yoshuawuyts/into-iterator-prototype/releases">
+    <a href="https://github.com/yoshuawuyts/iterate-trait/releases">
       Releases
     </a>
     <span> | </span>
-    <a href="https://github.com/yoshuawuyts/into-iterator-prototype/blob/master.github/CONTRIBUTING.md">
+    <a href="https://github.com/yoshuawuyts/iterate-trait/blob/master.github/CONTRIBUTING.md">
       Contributing
     </a>
   </h3>
@@ -110,7 +110,7 @@ together this changes the names to:
 
 ## Installation
 ```sh
-$ cargo add into-iterator-prototype
+$ cargo add iterate-trait
 ```
 
 ## Safety
@@ -124,9 +124,9 @@ look at some of these issues:
 - [Issues labeled "good first issue"][good-first-issue]
 - [Issues labeled "help wanted"][help-wanted]
 
-[contributing]: https://github.com/yoshuawuyts/into-iterator-prototype/blob/master.github/CONTRIBUTING.md
-[good-first-issue]: https://github.com/yoshuawuyts/into-iterator-prototype/labels/good%20first%20issue
-[help-wanted]: https://github.com/yoshuawuyts/into-iterator-prototype/labels/help%20wanted
+[contributing]: https://github.com/yoshuawuyts/iterate-trait/blob/master.github/CONTRIBUTING.md
+[good-first-issue]: https://github.com/yoshuawuyts/iterate-trait/labels/good%20first%20issue
+[help-wanted]: https://github.com/yoshuawuyts/iterate-trait/labels/help%20wanted
 
 ## License
 
