@@ -48,4 +48,18 @@ pub trait IntoIterator {
     {
         map::IntoMap::new(self, f)
     }
+
+    /// Transforms this iterator into a collection.
+    fn collect<B: FromIterator<Self::Item>>(self) -> B
+    where
+        Self: Sized,
+    {
+        FromIterator::from_iter(self)
+    }
+}
+
+/// Conversion from an [`IntoIterator`].
+pub trait FromIterator<A>: Sized {
+    /// Creates a value from an `IntoIterator`.
+    fn from_iter<T: IntoIterator<Item = A>>(iter: T) -> Self;
 }
