@@ -52,7 +52,7 @@
 //! The closest prior art for this in the stdlib I could find was the `Hash` /
 //! `Hasher` pair. The main trait `Hash` is the subject of the hashing, with
 //! `Hasher` containing all the hash state. This makes `Hasher` very similar to
-//! `Iterator`, and hints the better name for `Iterator` might in fact be `Iterate`.
+//! `Iterator`, and hints the better name for `IntoIterator` might in fact be `Iterate`.
 //!
 //! This just leaves us with what to do about `FromIterator`, which currently
 //! exists as a dual to `IntoIterator`. But interestingly it also exists as a
