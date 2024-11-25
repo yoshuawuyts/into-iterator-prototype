@@ -1,6 +1,6 @@
 //! Helper types for the `map` operation
 
-use super::{IntoIterator, Iterator};
+use super::{Iterate, Iterator};
 
 /// An iterator which maps items from one type to another
 #[derive(Debug)]
@@ -40,15 +40,15 @@ where
     }
 }
 
-impl<B, I: IntoIterator, F> IntoIterator for IntoMap<I, F>
+impl<B, I: Iterate, F> Iterate for IntoMap<I, F>
 where
     F: FnMut(I::Item) -> B,
 {
     type Item = B;
 
-    type IntoIterator = Map<I::IntoIterator, F>;
+    type Iterator = Map<I::Iterator, F>;
 
-    fn into_iter(self) -> Self::IntoIterator {
-        Map::new(self.iter.into_iter(), self.f)
+    fn iterate(self) -> Self::Iterator {
+        Map::new(self.iter.iterate(), self.f)
     }
 }

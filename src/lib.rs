@@ -15,7 +15,7 @@
 
 pub mod map;
 
-/// A trait for dealing with iterators.
+/// A stateful iterator, created by an instance of [`Iterate`].
 pub trait Iterator {
     /// The type of the elements being iterated over.
     type Item;
@@ -29,16 +29,16 @@ pub trait Iterator {
     }
 }
 
-/// Conversion into an Iterator.
-pub trait IntoIterator {
+/// Provide sequential, iterated access to items.
+pub trait Iterate {
     /// The type of the elements being iterated over.
     type Item;
 
     /// Which kind of iterator are we turning this into?
-    type IntoIterator: Iterator<Item = Self::Item>;
+    type Iterator: Iterator<Item = Self::Item>;
 
     /// Creates an iterator from a value.
-    fn into_iter(self) -> Self::IntoIterator;
+    fn iterate(self) -> Self::Iterator;
 
     /// Maps the values of iter with f.
     fn map<F, B>(self, f: F) -> map::IntoMap<Self, F>
@@ -50,16 +50,16 @@ pub trait IntoIterator {
     }
 
     /// Transforms this iterator into a collection.
-    fn collect<B: FromIterator<Self::Item>>(self) -> B
+    fn collect<B: Collect<Self::Item>>(self) -> B
     where
         Self: Sized,
     {
-        FromIterator::from_iter(self)
+        Collect::collect(self)
     }
 }
 
-/// Conversion from an [`IntoIterator`].
-pub trait FromIterator<A>: Sized {
+/// [`Iterate`] over items and collect them into a type.
+pub trait Collect<A>: Sized {
     /// Creates a value from an `IntoIterator`.
-    fn from_iter<T: IntoIterator<Item = A>>(iter: T) -> Self;
+    fn collect<T: Iterate<Item = A>>(iter: T) -> Self;
 }
