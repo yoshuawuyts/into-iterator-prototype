@@ -60,9 +60,8 @@
 //! where rather than creating a new container it can be used to extend an
 //! existing collection. This is also used in the unstable [`collect_into`
 //! method](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect_into).
-//! It's for this reason that we've renamed `FromIterator` to `Collect`.
-//!
-//! All together this changes the names to:
+//! It's for this reason that we've renamed `FromIterator` to `Collect`. All
+//! together this changes the names to:
 //!
 //! - `IntoIterator` → `Iterate`
 //! - `Iterator` → `Iterator`
@@ -74,7 +73,7 @@
 
 pub mod map;
 
-/// A stateful iterator, created by an instance of [`Iterate`].
+/// A stateful iterator returned by [`Iterate::iterate`].
 pub trait Iterator {
     /// The type of the elements being iterated over.
     type Item;
@@ -96,7 +95,7 @@ pub trait Iterate {
     /// Which kind of iterator are we turning this into?
     type Iterator: Iterator<Item = Self::Item>;
 
-    /// Creates an iterator from a value.
+    /// Begin iteration and obtain a stateful [`Iterator`].
     fn iterate(self) -> Self::Iterator;
 
     /// Maps the values of iter with f.
@@ -130,8 +129,8 @@ where
     }
 }
 
-/// [`Iterate`] over items and collect them into a type.
+/// Iterate over items and collect them into a value.
 pub trait Collect<A>: Sized {
-    /// Creates a value from an `IntoIterator`.
+    /// Creates a value from an `Iterate`.
     fn collect<T: Iterate<Item = A>>(iter: T) -> Self;
 }
